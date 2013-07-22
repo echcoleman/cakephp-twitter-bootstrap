@@ -14,11 +14,11 @@ echo "?>\n";
 <div class="<?php echo $pluralVar; ?> form">
 	<div class="actions btn-group pull-right">
 		<a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
-			<?php echo __('Actions'); ?>
+			<?php echo "<?php echo __('Actions'); ?>\n"; ?>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu">
-			<?php
+<?php
 			if (strlen(trim($displayField)) > 0) {
 				$deleteModelProperty = $displayField;
 				$deleteMessage = "Are you sure you want to delete {$singularVar}: %s?";

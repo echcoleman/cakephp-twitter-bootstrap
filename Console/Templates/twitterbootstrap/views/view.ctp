@@ -6,11 +6,11 @@
 <div class="<?php echo $pluralVar; ?> view">
 	<div class="actions btn-group pull-right">
 		<a href="#" data-toggle="dropdown" class="btn dropdown-toggle">
-			<?php echo __('Actions'); ?>
+			<?php echo "<?php echo __('Actions'); ?>\n"; ?>
 			<span class="caret"></span>
 		</a>
 		<ul class="dropdown-menu">
-		<?php
+<?php
 			if (strlen(trim($displayField)) > 0) {
 				$deleteModelProperty = $displayField;
 				$deleteMessage = "Are you sure you want to delete {$singularVar}: %s?";
@@ -19,9 +19,9 @@
 				$deleteModelProperty = $primaryKey;
 				$deleteMessage = "Are you sure you want to delete {$singularVar} # %s?";
 			}
-			echo "\t\t<li><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?> </li>\n";
-			echo "\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-			echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('{$deleteMessage}', \${$singularVar}['{$modelClass}']['{$deleteModelProperty}'])); ?> </li>\n";
+			echo "\t\t\t<li><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?> </li>\n";
+			echo "\t\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
+			echo "\t\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), null, __('{$deleteMessage}', \${$singularVar}['{$modelClass}']['{$deleteModelProperty}'])); ?> </li>\n";
 		?>
 		</ul>
 	</div>

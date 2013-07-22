@@ -20,9 +20,6 @@ class TwitterBootstrapFormHelper extends FormHelper {
 		if (!isset($options['class'])) {
 			$options['class'] = 'btn btn-success';
 		}
-		else {
-			$options['class'] .= 'btn btn-success';
-		}
 		return parent::end($options);
 	}
 }
