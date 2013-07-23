@@ -60,7 +60,8 @@
 <?php else: ?>
 				$this->flash(__('The <?php echo strtolower($singularHumanName); ?> has been saved.'), array('action' => 'index'));
 <?php endif; ?>
-			} else {
+			}
+			else {
 <?php if ($wannaUseSession): ?>
 				$this->Session->setFlash(__('The <?php echo strtolower($singularHumanName); ?> could not be saved. Please, try again.'), null, null, 'error');
 <?php endif; ?>
@@ -111,7 +112,7 @@
 <?php endif; ?>
 		}
 <?php if ($wannaUseSession): ?>
-		$this->Session->setFlash(__('<?php echo ucfirst(strtolower($singularHumanName)); ?> was not deleted'));
+		$this->Session->setFlash(__('<?php echo ucfirst(strtolower($singularHumanName)); ?> was not deleted'), null, null, 'error');
 <?php else: ?>
 		$this->flash(__('<?php echo ucfirst(strtolower($singularHumanName)); ?> was not deleted'), array('action' => 'index'), null, null, 'error');
 <?php endif; ?>
