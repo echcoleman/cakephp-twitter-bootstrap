@@ -30,7 +30,19 @@
 			echo "\t\t\t<tr>\n";
 				foreach ($fields as $field) {
 					if (in_array($field, array('id'))) continue;
-					echo "\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
+					$isKey = false;
+					if (!empty($associations['belongsTo'])) {
+						foreach ($associations['belongsTo'] as $alias => $details) {
+							if ($field === $details['foreignKey']) {
+								$isKey = true;
+								echo "\t\t\t\t<td>\n\t\t\t<?php echo \$this->Html->link(\${$singularVar}['{$alias}']['{$details['displayField']}'], array('controller' => '{$details['controller']}', 'action' => 'view', \${$singularVar}['{$alias}']['{$details['primaryKey']}'])); ?>\n\t\t</td>\n";
+								break;
+							}
+						}
+					}
+					if ($isKey !== true) {
+						echo "\t\t\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
+					}
 				}
 
 				if (strlen(trim($displayField)) > 0) {
