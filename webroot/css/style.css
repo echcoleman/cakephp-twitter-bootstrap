@@ -45,6 +45,7 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	margin-bottom: 0;
+	height: auto;
 }
 
 form div.input {
@@ -52,10 +53,6 @@ form div.input {
 	padding: 10px;
 	margin-bottom: 5px;
 	vertical-align: text-top;
-}
-
-form div.input.checkbox {
-	margin-left: 20px;
 }
 
 form .required {
@@ -85,6 +82,11 @@ select {
 
 .input.date select {
 	width: auto;
+}
+
+.radio input[type=radio],
+.checkbox input[type=checkbox] {
+	margin-left: 0;
 }
 
 /** Form errors **/
