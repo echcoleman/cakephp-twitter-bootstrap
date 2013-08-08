@@ -87,6 +87,7 @@ select {
 .radio input[type=radio],
 .checkbox input[type=checkbox] {
 	margin-left: 0;
+	margin-right: 10px;
 }
 
 /** Form errors **/
