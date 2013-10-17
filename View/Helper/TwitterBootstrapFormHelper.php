@@ -14,10 +14,10 @@ class TwitterBootstrapFormHelper extends FormHelper {
  * @return string a closing FORM tag optional submit button.
  */
 	public function end($options = null) {
-		if (!is_array($options)) {
-			$options = array();
+		if (is_string($options)) {
+			$options = array('label' => $options);
 		}
-		if (!isset($options['class'])) {
+		if (is_array($options) && !isset($options['class'])) {
 			$options['class'] = 'btn btn-success';
 		}
 		return parent::end($options);
